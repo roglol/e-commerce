@@ -11,7 +11,10 @@ class Products extends Component {
     getProducts = () => {
         axios.get('http://localhost:5000/products')
         .then(response => {
-           this.setState({products:response.data})
+            if(this.mounted){
+                this.setState({products:response.data})
+            }
+           
         })
       }
       removeProduct = (id) =>{
@@ -19,19 +22,25 @@ class Products extends Component {
         .then(response => response.data)
         .then( (newProductList) => {
             const products = newProductList
-            this.setState({products})
+                this.setState({products})
+           
         })
     }
 
     componentDidMount() {
+        this.mounted = true
         this.getProducts()
+    }
+    componentWillUnmount(){
+        this.mounted=false
     }
     render(){
         return (
             <div className="product-container">
             {
-                this.state.products.map( (el) =>(
+                this.state.products.map( (el, index) =>(
                 <Product
+                addToCart={this.props.addToCart}
                 remove={this.removeProduct}
                 key={el.id}
                 id={el.id}

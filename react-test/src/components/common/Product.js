@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
 
-const Product = ({url,name,price,id,remove}) => {
+const Product = ({url,name,price,id,remove,addToCart}) => {
     return(   
 		<div className="product-item">
 			<Link to={"/products/"+id} className="product-link"><img src={url} alt="" className="product-image"/></Link>
@@ -10,7 +10,13 @@ const Product = ({url,name,price,id,remove}) => {
 					<p className="product-par">Explore Now</p>
 					<h4><i className="fas fa-shopping-cart"></i><span className="product-price"> ${price}</span></h4>
 				</div>
-
+				{localStorage.getItem('authorized') &&
+					localStorage.getItem('authorized') !== 'admin' &&
+					<button
+					onClick={() =>addToCart({data:localStorage.getItem('authorized'),productId:id})}
+					>
+						Add To Cart
+						</button>}
 				{localStorage.getItem('authorized') ==='admin' && 
 				<>
 			<Link to={"/admin/products/edit/" + id} className="edit">Edit</Link> 

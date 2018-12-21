@@ -1,12 +1,47 @@
 import React from 'react';
-import { Link} from 'react-router-dom';
+import { Link, Redirect} from 'react-router-dom';
+import axios from 'axios'
 
-const Navigation = (props) => {
-    const logOut = () => {
-        props.showLogin(true)
-        props.showAdmin(false)
+class Navigation extends React.Component {
+    state={
+        products:[
+
+        ]
+    }
+    logOut = () => {
+        this.props.showLogin(true)
+        this.props.showAdmin(false)
         localStorage.removeItem('authorized')
     }
+    getSearch = (name) => {
+        axios.get('http://localhost:5000/search/' + name)
+        .then(response => {
+           this.setState({products:response.data})
+        })
+      }
+    getProduct = (name) => {
+        axios.get('http://localhost:5000/search/product/' + name)
+        .then(response => {
+            if(response.data){
+                this.props.history.push('/')
+                this.props.history.push('/products/' + response.data)
+            }
+          
+        })
+    }
+    change = (e) => {
+        if(e.target.value !== ''){
+            this.getSearch(e.target.value)
+        }
+    }
+   onSubmit = (e) => {
+       e.preventDefault()
+       let name = e.target.children[0].value
+       this.getProduct(name)
+       e.target.children[0].value = ''
+   }
+   
+   render(){
     return (
 
         <div className="navigation">
@@ -17,26 +52,26 @@ const Navigation = (props) => {
                             <li className="active">
                             <Link to='/'>Home</Link>
                             </li>
-                           {props.showLog &&  
-                           !props.admin &&
+                           {this.props.showLog &&  
+                           !this.props.admin &&
                            <li className="grid">
                            <Link to='/login'>Login</Link>
                                </li>
                         } 
-                        {props.showLog &&
-                         !props.admin &&
+                        {this.props.showLog &&
+                         !this.props.admin &&
                         <li className="grid">
                         <Link to='/register'>Registration</Link>
                                </li>
                         }
-                             {!props.showLog &&
-                             !props.admin &&
+                             {!this.props.showLog &&
+                             !this.props.admin &&
                         <li className="grid">
                         <Link to='/profile'>Profile</Link>
                                </li>
                              }
-                              {props.showLog &&
-                             props.admin &&
+                              {this.props.showLog &&
+                             this.props.admin &&
                         <li className="grid">
                         <Link to='/admin'>Admin</Link>
                                </li>
@@ -44,9 +79,9 @@ const Navigation = (props) => {
                          <li className="grid">
                             <Link to='/'>About Us</Link>
                             </li>
-                            {(!props.showLog || props.admin) &&
+                            {(!this.props.showLog || this.props.admin) &&
                         <li className="grid">
-                        <Link to='/' onClick={logOut}>Log Out</Link>
+                        <Link to='/' onClick={this.logOut}>Log Out</Link>
                                </li>
                         }
 
@@ -55,8 +90,20 @@ const Navigation = (props) => {
 
                     <div className="header-right">
                         <div className="search-bar">
-                            <input type="text" placeholder="search" />
-                            <input type="submit" className="searchBtn" value="Search" /> 
+                        <form onSubmit={this.onSubmit}>
+                        <input 
+                        onChange={this.change}
+                        name="search"
+                        list = "products" 
+                        type="text" 
+                        placeholder="search" />
+                        <datalist id="products">
+                        {this.state.products.map(el =>{
+                            return <option key={el.id} value={el.name}/>
+                        })}
+                               </datalist>
+                        <button>Search</button>
+                        </form>
                         </div>
 
                    
@@ -68,6 +115,7 @@ const Navigation = (props) => {
         </div>
 
     )
+   } 
 }
 
 export default Navigation;

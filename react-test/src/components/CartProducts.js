@@ -54,6 +54,12 @@ class CartProducts  extends React.Component {
           this.setState({error:true, purchased:false})
         }
     }
+    total = () =>{
+        const sum = this.state.cart.reduce((acc,el) =>{
+            return acc + parseInt(el.price)
+        },0)
+        return sum
+    }
  
     componentDidMount(){
         const data = localStorage.getItem('authorized')
@@ -102,6 +108,7 @@ class CartProducts  extends React.Component {
                 >
                     Not Enough Money</h1>
                 }
+                <span>Total - ${this.total()}</span>
                 <button 
                 onClick={this.enable}
                 className="purchase">

@@ -80,20 +80,26 @@ class App extends Component {
       <Router>
         <div className="App">
        <Header/>
-       <Navigation 
-       admin={this.state.admin}
-       showLog={this.state.showLogin}
-       showLogin={ (change) => { this.setState({showLogin:change}) }
+       <Route 
+       component = {(props) => 
+        <Navigation 
+        admin={this.state.admin}
+        showLog={this.state.showLogin}
+        showLogin={ (change) => { this.setState({showLogin:change}) }
+       } 
+       showAdmin={ (change) => { this.setState({admin:change}) }
+     } 
+      {...props}
+       />
       } 
-      showAdmin={ (change) => { this.setState({admin:change}) }
-    } 
-      />
+       />
        <Route 
           path="/" 
           exact
           component={Main}
           />
-           <Route 
+           <Route
+           exact 
           path="/products/:id" 
           component={ProductDetails}
           />

@@ -11,7 +11,6 @@ class UserMessages extends React.Component {
     getMessages(){
         axios.get('http://localhost:5000/admin/users/messages/'+this.props.match.params.id)
         .then(response => {
-            console.log(response.data)
             this.setState({messages:response.data})
         })
     }

@@ -1,5 +1,5 @@
 import { BrowserRouter,browserHistory, Router, Link, Route, Redirect } from 'react-router-dom';
-
+import axios from 'axios'
 import React from 'react'
 import Joi from "joi-browser";
 import Form from "./common/form";
@@ -14,7 +14,8 @@ class RegistrationForm extends Form {
             birthday:"",
             balance:"",
         },
-        errors: {}
+        users:[],
+        errors: {},
     }
 
     schema ={
@@ -40,28 +41,25 @@ class RegistrationForm extends Form {
            .label("Balance")
     }
 
+      getUsers = () => {
+    axios.get('http://localhost:5000/users')
+    .then(response => {
+       this.setState({users:response.data})
+  })
+}
+
     componentDidMount() {
-        // const genres= getGenres();
-        // this.setState({genres});
-
-        // const movieId = this.props.match.params.id
-        // if (movieId === "new") return;
-
-        // const movie = getMovie(movieId)
-        // if (!movie) return this.props.history.replace("/not-found")
-
-        // this.setState({data: this.mapToViewModel(movie)})
+      this.getUsers()
     }
 
 
     doSubmit = () => {
-        // saveMovie(this.state.data)
+     
         const data = this.state.data
         this.props.register(data)
 
         this.props.history.replace("/")
-        // <Redirect to={`/`} />
-        // return (<Redirect to={`/`} />) 
+    
     }
 
     render() {
@@ -73,7 +71,7 @@ class RegistrationForm extends Form {
               {this.renderInput("email", "Email")}
               {this.renderInput("password", "Password", "password")}
               {this.renderInput("age", "Age")}
-              {this.renderInput("birthday", "Birthday")}
+              {this.renderInput("birthday", "Birthday", 'date')}
               {this.renderInput("balance", "Balance")}
               {this.renderButton("Register")}
               </form>

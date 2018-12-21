@@ -12,6 +12,9 @@ class ProductForm extends Form {
             desc:"",
             price:"",
         },
+        products: [
+
+        ],
         errors: {}
     }
 
@@ -30,6 +33,13 @@ class ProductForm extends Form {
            .required()
            .label("Price")
     }
+
+    getProducts = () => {
+    axios.get('http://localhost:5000/products')
+    .then(response => {
+       this.setState({products:response.data})
+    })
+  }
     getProduct(){
 
   axios.get('http://localhost:5000/products/' + this.props.match.params.id)
@@ -48,6 +58,7 @@ class ProductForm extends Form {
     }
 
     componentDidMount() {
+        this.getProducts()
         if(this.props.match.params.id){
             this.getProduct()
         }

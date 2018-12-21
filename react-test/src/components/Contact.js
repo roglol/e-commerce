@@ -79,7 +79,7 @@ class Contact extends Form {
                     {this.renderInput("email", "Email")}
 					</div>
                     <div className="right--container__item2">
-                    {this.renderInput("message", "Message")}
+                    {this.renderTextArea("message", "Message")}
 					</div>
                     <div className="right--container__item3">
                     {this.renderButton("Submit")}
