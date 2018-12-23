@@ -1,0 +1,64 @@
+.details{
+  display:flex;
+  max-width: 90%;
+  margin: auto;
+  padding: 40px 0;
+
+}
+
+.details-image{
+  margin-top: 15px;
+  height: 400px;
+  width: 400px;
+}
+
+
+.details-name{
+  font-size: 40px;
+  color: #000;
+  margin: 30px 0 0 0;
+  font-family: 'BreeSerif-Regular';
+}
+
+.details-price{
+  font-size: 30px;
+  color: #000;
+  margin: 5px 0 0 0;
+  font-family: 'BreeSerif-Regular';
+}
+
+.details-button{
+  text-transform: uppercase;
+  padding: 5px 25px;
+  background: #000;
+  color: #fff;
+  outline: none;
+  border:none;
+  transition: all .1s linear;
+}
+
+.details-button:hover{
+  background: lightseagreen;
+  cursor: pointer;
+}
+
+.details-button:active{
+  transform: translateY(3px);
+}
+
+
+/* This is responsive for mobile */
+
+@media all and (max-width: 519px) {
+  .details-image {
+    height:200px;
+    width:200px;
+    margin:auto;
+  }
+  .details{
+   
+    flex-direction: column;
+  }
+  
+  
+}

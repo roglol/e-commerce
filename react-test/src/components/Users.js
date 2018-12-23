@@ -1,8 +1,9 @@
-import React from 'react';
-import User from './common/User'
-import axios from 'axios'
+import React, {Component} from 'react';
+import User from './common/User';
+import axios from 'axios';
 
-class Users  extends React.Component {
+
+class Users  extends Component {
 state={
     users:[
 

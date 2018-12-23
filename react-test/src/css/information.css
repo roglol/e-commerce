@@ -1,0 +1,115 @@
+/* start-information */
+
+.information {
+  font-size: 14px;
+  color: #333;
+  height:220px;
+  margin-bottom:40px;
+  }
+  
+.info-box {
+  border-bottom: 1px solid rgb(197, 193, 193);
+  justify-content: space-between;
+  margin: auto;
+  height:220px;
+  display: flex;
+  width: 90%;
+  }
+  
+.info {
+  margin-top:30px;
+  width:180px;  
+  }
+
+.info h3{
+    font-size:22px;
+  }
+
+.info:hover{
+  border-bottom: 2px solid #73B6E1;
+  }
+  
+.info p {
+  color:#999;
+  }
+
+.info>ul>li>a {
+  text-decoration: none;
+  color: #999;
+  font-size: 16px;
+  }
+
+.info>ul>li {
+  list-style-type: none;
+  margin-bottom: 15px;
+  }
+  
+.info>p:hover, .info>ul>li>a:hover  {
+  color:#73B6E1;
+  cursor: pointer;
+  }
+
+.info>ul>li>i {
+  font-size:24px; 
+  color:#333;
+  margin-right:10px;
+  }
+  
+.info>ul>li>i:hover {
+  cursor: pointer;
+  color:#73B6E1;
+  transition: .4s all;
+  -webkit-transition: .4s all;
+  -o-transition: .4s all;
+  -ms-transition: .4s all;
+  -moz-transition: .4s all;
+  transform: rotatey(360deg);
+  -webkit-transform: rotatey(360deg);
+  -moz-transform: rotatey(360deg);
+  -o-transform: rotatey(360deg);
+  -ms-transform: rotatey(360deg);
+  }
+
+
+
+
+  /* This is responsive for tablet */
+
+@media all and (min-width:520px) and (max-width: 860px) {
+
+.information {
+  height:440px;
+  }
+
+.info-box {
+  flex-direction: column;
+  height:440px;
+  flex-flow: row wrap;
+  }
+
+.info {
+  width:40%;
+  }
+
+}
+
+
+
+/* This is responsive for mobile */
+
+@media all and (max-width: 519px) { 
+
+.information {
+  height:440px;
+  }
+
+.info-box {
+  flex-direction: column;
+  height:440px;
+  flex-flow: row wrap;
+  }
+.info {
+  width:40%;
+  }
+  
+}

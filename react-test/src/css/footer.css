@@ -1,0 +1,82 @@
+/* start-footer */
+
+.footer {
+  height:100px;
+  }
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 100px;
+  padding-left: 100px;
+  margin: auto;
+  }
+  
+.footer-left input {
+  margin-right:25px;
+  border:1px solid black;
+  background-color: #fff;
+  padding: 4px 12px;
+  }
+  
+.subscribe:hover{
+  background-color:#73B6E1;
+  color:white;
+  cursor: pointer;
+  transition: color .3s ease-in;
+  }
+
+.footer-right p:hover{
+  color: #73B6E1;
+  }
+ 
+
+
+
+   /* This is responsive for tablet */
+
+@media all and (min-width:520px) and (max-width: 860px) {
+
+.footer-wrap {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  }
+
+.footer-left {
+  display: flex;
+  }
+
+.footer-right {
+  margin-top:20px;
+  }
+
+}
+
+
+
+/* This is responsive for mobile */
+
+@media all and (max-width: 519px) { 
+
+.footer-wrap {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  }
+
+.footer-left {
+  display:flex;
+  padding:0px;
+  margin-bottom: 20px;
+  }
+
+.footer-left input{
+  margin-right:10px;
+}
+
+.footer-right {
+  text-align: center;
+  }
+
+ }

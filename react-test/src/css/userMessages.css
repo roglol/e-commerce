@@ -1,0 +1,37 @@
+.messages {
+    border: 1px solid #73B6E1;
+    border-radius:5px;
+    height:auto;
+    width:40%;
+    margin:0px auto 50px;
+    padding:13px;
+}
+.messageFrom {
+    height:auto;
+    width:40%;
+    margin:50px auto 5px;
+    font-size:1.3rem;
+}
+
+
+/* responsive from mobile */
+
+@media all and (min-width:520px) and (max-width: 860px) {
+
+    .messages {
+
+        width:60%;
+    }
+}
+
+
+/* This is responsive for mobile */
+
+@media all and (max-width: 519px) { 
+.messages {
+    width:70%;
+}
+}
+
+
+

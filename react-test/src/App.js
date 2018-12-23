@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import { ProtectedRoute } from './routes/ProtectedRoute';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -12,18 +12,20 @@ import Information from './components/Information';
 import Footer from './components/Footer';
 import Products from './components/Products'
 import ProductDetails from './components/common/ProductDetails';
-import Profile from './components/Profile'
-import Login from './components/Login'
-import CartProducts from './components/CartProducts'
-import BoughtProducts from './components/BoughtProducts'
-import Admin from './components/Admin'
-import Users from './components/Users'
-import UserCart from './components/UserCart'
-import UserPurchases from'./components/UserPurchases'
-import UserMessages from './components/UserMessages'
-import EditUserName from './components/EditUserName'
-import ProductForm from './components/ProductForm'
-import Contact from './components/Contact'
+import Profile from './components/Profile';
+import Login from './components/Login';
+import CartProducts from './components/CartProducts';
+import BoughtProducts from './components/BoughtProducts';
+import Admin from './components/Admin';
+import Users from './components/Users';
+import UserCart from './components/UserCart';
+import UserPurchases from'./components/UserPurchases';
+import UserMessages from './components/UserMessages';
+import EditUserName from './components/EditUserName';
+import ProductForm from './components/ProductForm';
+import Contact from './components/Contact';
+import 'antd/dist/antd.css';
+
 
 const Main = () => {
   return (
@@ -43,27 +45,10 @@ class App extends Component {
     admin:false
   } 
 
-  // getProducts = () => {
-  //   axios.get('http://localhost:5000/products')
-  //   .then(response => {
-  //     console.log(response.data)
-  //      this.setState({products:response.data})
-  //   })
-  // }
-//   getUsers = () => {
-//     axios.get('http://localhost:5000/users')
-//     .then(response => {
-//       console.log(response.data)
-//        this.setState({products:response.data})
-//   })
-// }
+  
   registerUser = (newUser) => {
       axios.post('http://localhost:5000/register', newUser)
-      .then(response => response.data)
-      .then(newItem => {
-      })
-  
-  }
+    }
   userLogIn(change){
     this.setState({userLoggedIn:change})
   }
@@ -71,17 +56,14 @@ class App extends Component {
     this.setState({admin:change})
   }
 
-  // componentDidMount(){
-  //   this.getProducts()
-  //   this.getUsers()
-  // }
+  
   render() {
     return (
       <Router>
         <div className="App">
        <Header/>
        <Route 
-       component = {(props) => 
+       component= { (props) =>
         <Navigation 
         admin={this.state.admin}
         showLog={this.state.showLogin}
@@ -89,17 +71,17 @@ class App extends Component {
        } 
        showAdmin={ (change) => { this.setState({admin:change}) }
      } 
-      {...props}
+     {...props}
        />
-      } 
+      }
        />
+      
        <Route 
           path="/" 
           exact
           component={Main}
           />
-           <Route
-           exact 
+           <Route 
           path="/products/:id" 
           component={ProductDetails}
           />
@@ -109,11 +91,12 @@ class App extends Component {
          /> 
          <Route
          path="/login"
-         component={ () =><Login 
+         component={ (props) =><Login 
          showLogin={ (change) => { this.setState({showLogin:change}) }
         } 
         showAdmin={ (change) => { this.setState({admin:change}) }
       } 
+      {...props}
          />}
          />
          <ProtectedRoute 
@@ -179,9 +162,6 @@ class App extends Component {
          path="/profile/purchases" 
          component={BoughtProducts}
          />
-
-         {!this.state.showLogin &&  (<Redirect to={`/profile`} />) }
-         {this.state.admin &&  (<Redirect to={`/admin`} />) }
         <Information/>
        <Footer/>
       </div>
@@ -191,6 +171,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-

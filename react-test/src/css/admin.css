@@ -1,0 +1,73 @@
+/* Admin account */
+
+.adminParent {
+  margin-top:20px;
+  height: 250px;
+}
+
+.admin {
+  width:50%;
+  text-align: center;
+  margin:auto;
+  margin-top:30px;
+  margin-bottom:60px;
+  color: #333;
+  }
+
+.all {
+  display:flex;
+  justify-content: space-between;
+  width:50%;
+  margin:auto;
+  color: #333;
+  }
+
+.allUsers , .allProducts {
+  border:1px solid #999;
+  padding:10px 0;
+  width:200px;
+  text-align: center;
+  font-size: 23px;
+  }
+
+.allProducts:hover, .allUsers:hover {
+  border:1px solid #73B6E1;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 3px #73B6E1;
+  }
+
+
+
+  /* This is responsive for tablet */
+
+@media all and (min-width:520px) and (max-width: 860px) {
+
+.admin {
+  width:100%;
+}
+.all {
+  width:85%;
+  justify-content: space-around;
+}
+
+}
+
+
+
+/* This is responsive for mobile */
+
+@media all and (max-width: 519px) { 
+
+.admin {
+  width:100%;
+}
+
+.all {
+  width: 100%;
+}
+
+.allUsers , .allProducts {
+  width:47%;
+}
+
+}

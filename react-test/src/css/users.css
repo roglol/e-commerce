@@ -1,0 +1,67 @@
+/* start- back-end:  admin => users  */
+
+
+.users {
+    margin:30px auto 100px;
+    border-bottom: 1px solid #DEDEDE;
+    padding:8px 8px;
+    height: 50px;
+    width:90%;
+    display: flex;
+    justify-content:space-around;
+    color:#73B6E1;
+  }
+  
+.username:hover {
+    cursor: pointer;
+    color:#333;  
+  }
+  
+.username {
+    width:15%;
+    text-align:center;
+  }
+  
+
+
+
+
+   /* This is responsive for tablet */
+
+@media all and (min-width:520px) and (max-width: 860px) {
+
+.username {
+    width:19%;
+}
+
+}
+
+/* This is responsive for mobile */
+
+@media all and (max-width: 519px) {
+
+.users {
+    height:150px;
+    flex-direction: column;
+    border:0px;
+    align-items: center;
+}
+
+.username{
+    width:90%;
+    border:1px solid #999;
+    border-radius:4px;
+    margin-bottom:10px;
+    padding:4px;
+}
+
+.username:first-child:hover {
+    font-weight: bold;
+    color: #333;
+}
+
+.username:hover {
+    border:1px solid #73B6E1;
+}
+
+}

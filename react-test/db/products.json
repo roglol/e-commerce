@@ -4,49 +4,49 @@
         "name": "Timex",
         "url" : "https://n3.sdlcdn.com/imgs/e/v/o/SDL044502225_1-6ee47.jpg",
         "desc" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. ",
-        "price": "230"
+        "price": "1230"
     },
     {
         "id": 2,
         "name": "Cassio",
         "url" : "http://assets.myntassets.com/assets/images/1405278/2018/3/5/11520252607778-CASIO-Edifice-Men-Blue-Dial-Chronograph-Watch-EX302-1121520252607568-1.jpg",
         "desc" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
-        "price": "150"
+        "price": "1150"
     },
     {
         "id": 3,
         "name": "Ambassador",
         "url" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4ozdsyNDoFsS-UwQa4JzpZ4RcmJxf1Y1HQvb9giXTL_weQM44ig",
         "desc" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
-        "price": "350"
+        "price": "950"
     },
     {
         "id": 4,
         "name": "Citizen",
         "url" : "https://citizenwatches.global.ssl.fastly.net/media/catalog/product/cache/8/image/650x/040ec09b1e35df139433887a97daa66f/a/u/au1083-13h_p.jpg",
         "desc" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
-        "price": "700"
+        "price": "900"
     },
     {
         "id": 5,
         "name": "Rolex",
         "url" : "https://images-na.ssl-images-amazon.com/images/I/61my7y45mVL._UX342_.jpg",
         "desc" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
-        "price": "620"
+        "price": "720"
     },
     {
         "id": 6,
-        "name": "MVMT",
-        "url" : "http://cdn.shopify.com/s/files/1/0377/2037/products/BlackTanLeather.Front_1024x1024_9dd2d898-9347-41f0-b6aa-0d169c0e1b4f_grande.jpg?v=1539054285",
+        "name": "Swatch",
+        "url" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBZ8zAteq5GClcOhWwt16IJhRLkeOsj4DBm7djbqNSqv-sKt1fA",
         "desc" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
-        "price": "330"
+        "price": "1330"
     },
     {
         "id": 7,
         "name": "BeWatch",
         "url" : "https://sslimages.shoppersstop.com/B8AC9759D45547D9AEF177F0DE13B7C8/img/36634F71676840AEB7D4978DDBE6685E/203507850_9999_36634F71676840AEB7D4978DDBE6685E.jpg",
         "desc" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
-        "price": "190"
+        "price": "1190"
     },
     {
         "id": 8,

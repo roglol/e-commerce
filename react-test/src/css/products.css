@@ -1,0 +1,134 @@
+/* Products */
+
+.product-container {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  height: 100%;
+  max-width: 90%;
+  margin:auto;
+  }
+  
+.product-item {
+  padding: 1em 0px 2.7em 0px;
+  border:1px solid #ECEAEA;
+  width: 21%;
+  position:relative;
+  margin-bottom:15px;
+  margin-left:3%;
+  }
+
+.product-item:hover {
+  border:1px solid #73B6E1;
+  -webkit-transform: scale(1.05);
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 500ms;
+  -moz-transform: scale(1.05);
+  -moz-transition-timing-function: ease-out;
+  -moz-transition-duration: 500ms;
+  cursor:pointer;
+  }
+
+.product-link {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  padding: 12px 0px;
+  }
+
+.product-image{
+  height: 200px;
+  }
+
+.product-bottom {
+  text-align: left;
+  margin-top: 20px;
+  padding-left: 30px;
+  }
+
+.product-name {
+  font-size: 16px;
+  color: #000;
+  margin: 0;
+  text-transform: uppercase; 
+  }
+
+.product-price{
+  font-size: 17px;
+  color: #000;
+  margin: 5px 0 0 0;
+  }
+
+.product-par {
+  font-size: 12px;
+  color: #999;
+  margin: 5px 0 0 0;
+  text-transform: uppercase;
+  }
+  
+.btn-custom{
+  text-transform: uppercase;
+  padding: 5px 15px;
+  background: #000;
+  color: #fff;
+  outline: none;
+  border:none;
+  position: absolute;
+  bottom:10px;
+  right:0;
+  }
+
+.btn-custom:hover{
+  background: lightseagreen;
+  cursor: pointer;
+  text-decoration: none;
+  color:#fff;
+  }
+
+.remove{
+  position: absolute;
+  top:10px;
+  right:10px;
+  }
+
+
+
+  /* This is responsive for tablet */
+
+@media all and (min-width:520px) and (max-width: 860px) {
+
+.product-container {
+  margin: 0px;
+  width:90%;
+  margin:auto;
+  flex-direction: column;
+}
+
+.product-item {
+  width: 100%;
+  height:350px;
+  margin-left:0%;
+}
+
+}
+
+
+/* This is responsive for mobile */
+
+@media all and (max-width: 519px) { 
+
+.product-container {
+  margin: 0px auto;
+  width:100%;
+  flex-direction: column;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  }
+
+.product-item {
+  width:49%;
+  padding:0;
+  margin-left:1%;
+  }
+
+}

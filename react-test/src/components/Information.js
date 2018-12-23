@@ -1,15 +1,17 @@
 import React from 'react';
+import '../css/information.css';
 
-const Information = (props) => {
+const Information = () => {
+
     return (
         <div className="information">
             <div className="info-box">
                 <div className="info">
                     <h3> Follow Us </h3>
                     <ul>
-                        <li> <a href="facebook.com" > Facebook </a></li>
-                        <li> <a href="twitter.com" > Twitter </a></li>
-                        <li> <a href="google.com" > Google+ </a></li>
+                        <li> <i className="fab fa-facebook-square"></i>  <a href="facebook.com" > Facebook </a></li>
+                        <li> <i className="fab fa-twitter-square" ></i> <a href="twitter.com" > Twitter </a></li>
+                        <li> <i className="fab fa-google-plus-square"></i> <a href="google.com" > Google+ </a></li>
                     </ul>
                 </div>
                 <div className="info">
@@ -28,11 +30,11 @@ const Information = (props) => {
                     <p> My Addresses </p>
                 </div>
                 <div className="info">
-                <h3> Store Information </h3>
-                <p> Techhub Team </p>
-                <p> Tbilisi,Georgia </p>
-                <p> +995123456 </p>
-                <p> BestTeam@gmail.com </p>  
+                    <h3> Store Information </h3>
+                    <p> Techub Team </p>
+                    <p> Tbilisi, Georgia </p>
+                    <p> +995555123456 </p>
+                    <p> BestTeam@gmail.com </p>
                 </div>
 
             </div>

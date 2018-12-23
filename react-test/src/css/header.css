@@ -1,0 +1,43 @@
+/* start-top-header  */
+
+.top-header {
+  background: #000;
+  height:60px;
+  }  
+
+.logo {
+  text-align: center;
+  padding: 25px 0 20px 0px;
+  border-bottom: 1px solid #DEDEDE;
+  }
+
+.logo a h1 {
+  font-size: 32px;
+  color: #000000;
+  margin: 0;
+  font-family: 'Lora-Regular';
+  text-transform: uppercase;
+  display: inline-block;
+  }
+
+.logo a:hover{
+  text-decoration:none;
+  }
+
+
+
+
+  /* This is responsive for mobile */
+
+@media all and (max-width: 519px) {
+
+.top-header{
+  height:45px;
+  }
+
+.logo a h1 {
+  font-size: 25px;
+  }
+
+}
+

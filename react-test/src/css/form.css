@@ -1,0 +1,52 @@
+.container-div{
+  margin: 50px auto;
+  }
+
+.main-form {
+  width: 40%;
+  margin: auto;
+  display:flex;
+  flex-direction: column;
+  }
+
+.main-title{
+  text-align: center;
+  font-family: 'Lora-Regular';
+  }
+  
+.btn{
+  text-transform: uppercase;
+  background: #000; 
+  color: #fff;
+  text-align:center;
+  width: 30%;
+  margin:auto;
+  }
+
+.btn:hover{
+  background: lightseagreen;
+  cursor: pointer;
+  text-decoration: none;
+  color:#fff;
+  }
+
+
+/* This is responsive for tablet */
+
+@media all and (min-width:520px) and (max-width: 860px) {
+
+  .btn{
+    width:50%;
+  }
+
+}
+
+
+/* This is responsive for mobile */
+
+@media all and (max-width: 519px) {
+
+  .main-form {
+    width:80%;
+  }
+}

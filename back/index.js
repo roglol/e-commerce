@@ -42,7 +42,7 @@ app.get('/products/:id', (req,res) => {
 })
 app.get('/search/:name', (req,res) =>{
     const name = req.params.name
-    const products = Products.filter(el => el.name.toLowerCase().includes(name))
+    const products = Products.filter(el => el.name.toLowerCase().startsWith(name))
         res.send(products)
 })
 app.get('/search/product/:name', (req,res) =>{
@@ -73,11 +73,13 @@ app.post('/cart', (req,res) =>{
     const user = Users.find(el => el.username === data)
     res.send(user.cartProducts)
 })
+
 app.post('/cartlength', (req,res) =>{
     const data = req.body.data
     const user = Users.find(el => el.username === data)
     res.send((user.cartProducts.length).toString())
 })
+
 app.post('/balance', (req,res) =>{
     const data = req.body.data
     const user = Users.find(el => el.username === data)
@@ -89,6 +91,7 @@ app.post('/message', (req,res) =>{
     const index = Users.indexOf(user)
     user.messages.push(req.body.message)
     Users.splice(index,1 ,user)
+    res.send(user.messages)
 
 })
 app.post('/purchases', (req,res) =>{
@@ -96,11 +99,13 @@ app.post('/purchases', (req,res) =>{
     const user = Users.find(el => el.username === data)
     res.send(user.boughtProducts)
 })
+
 app.post('/purchaseslength', (req,res) =>{
     const data = req.body.data
     const user = Users.find(el => el.username === data)
     res.send((user.boughtProducts.length).toString())
 })
+
 app.post('/purchase', (req,res) =>{
     const data = req.body.data
     const user = Users.find(el => el.username === data)
@@ -176,6 +181,11 @@ app.get('/admin/users/messages/:id', (req,res) =>{
     const user = Users.find(el => el.id == id)
     res.send(user.messages)
 })
+app.get('/admin/users/:id', (req,res) =>{
+    const id = req.params.id
+    const user = Users.find(el => el.id == id)
+    res.send(user.username)
+})
 app.post('/admin/edit/username', (req,res) =>{
     const data = req.body.data
     const username = req.body.username
@@ -188,7 +198,7 @@ app.post('/admin/edit/username', (req,res) =>{
 
 app.post('/admin/addproduct', (req,res) =>{
     const product = req.body
-    product.id =  Date.now()
+    product.id = Date.now()
     Products.push(product)
     res.send(product)
 })
